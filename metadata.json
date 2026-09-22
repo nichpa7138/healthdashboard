@@ -1,0 +1,6 @@
+{
+  "name": "Dashboard รายงานสรุปผลคัดกรองสุขภาพ",
+  "description": "ระบบแดชบอร์ดรายงานสรุปผลการคัดกรองสุขภาพ เชื่อมโยงข้อมูล Google Sheets แบบ Real-time โทนสีชมพู พร้อมการวิเคราะห์กลุ่มเสี่ยงและพฤติกรรมสุขภาพ",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
