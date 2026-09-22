@@ -14,7 +14,6 @@ import { fetchHealthRecords, DEFAULT_SHEET_ID } from './services/sheetService';
 import { HealthRecord, FilterState } from './types';
 import { calculateKPIs } from './utils/healthCalculations';
 import { FALLBACK_RECORDS } from './data/initialData';
-import { Activity, ShieldCheck, AlertCircle, FileSpreadsheet } from 'lucide-react';
 
 const INITIAL_FILTERS: FilterState = {
   search: '',
@@ -259,35 +258,6 @@ export default function App() {
           onExportCsv={handleExportCsv}
         />
       </main>
-
-      {/* Modern Footer */}
-      <footer className="bg-white border-t border-rose-100 py-6 text-xs text-slate-500">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-3">
-          <div className="flex items-center gap-2">
-            <div className="w-6 h-6 rounded-lg bg-rose-500 text-white flex items-center justify-center">
-              <Activity className="w-3.5 h-3.5" />
-            </div>
-            <span className="font-semibold text-slate-800">
-              Dashboard รายงานสรุปผลคัดกรองสุขภาพ
-            </span>
-            <span>• เชื่อมโยงข้อมูล Google Sheets ID 1pgK6yyaLxknSt_p1j0nY88lMMxbfkS7kyty4ltl_R7Y</span>
-          </div>
-
-          <div className="flex items-center gap-4 text-slate-400">
-            <span>สถานะระบบ: เชื่อมต่อ Real-time สมบูรณ์</span>
-            <span>•</span>
-            <a
-              href={`https://docs.google.com/spreadsheets/d/${DEFAULT_SHEET_ID}/edit`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-rose-600 hover:text-rose-700 flex items-center gap-1 font-medium"
-            >
-              <FileSpreadsheet className="w-3.5 h-3.5 text-emerald-600" />
-              <span>เปิด Google Sheet</span>
-            </a>
-          </div>
-        </div>
-      </footer>
     </div>
   );
 }
