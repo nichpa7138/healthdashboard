@@ -149,7 +149,7 @@ export default function App() {
     if (filteredRecords.length === 0) return;
 
     const headers = [
-      'รหัสบุคคล',
+      'ลำดับ',
       'วันที่คัดกรอง',
       'พื้นที่',
       'เพศ',
@@ -171,8 +171,8 @@ export default function App() {
       'เดือน',
     ];
 
-    const rows = filteredRecords.map((r) => [
-      `"${r.id}"`,
+    const rows = filteredRecords.map((r, index) => [
+      index + 1,
       `"${r.date}"`,
       `"${r.area}"`,
       `"${r.gender}"`,

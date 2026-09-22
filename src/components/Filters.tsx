@@ -77,7 +77,7 @@ export const Filters: React.FC<FiltersProps> = ({
               type="text"
               value={filters.search}
               onChange={(e) => onFilterChange('search', e.target.value)}
-              placeholder="ค้นหารหัสบุคคล / พื้นที่..."
+              placeholder="ค้นหาพื้นที่ / ระดับเสี่ยง..."
               className="w-full pl-8.5 pr-3 py-1.5 text-xs bg-slate-50/70 hover:bg-slate-50 focus:bg-white border border-rose-200/80 rounded-xl text-slate-800 placeholder-slate-400 focus:outline-hidden focus:ring-2 focus:ring-rose-400/30 focus:border-rose-400 transition"
             />
           </div>

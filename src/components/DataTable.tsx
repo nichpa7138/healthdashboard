@@ -191,12 +191,7 @@ export const DataTable: React.FC<DataTableProps> = ({ records, onExportCsv }) =>
           <thead className="bg-slate-50/90 text-slate-700 uppercase font-semibold text-[11px] tracking-wider">
             <tr>
               <th scope="col" className="px-3.5 py-3 text-left">
-                <button 
-                  onClick={() => handleSort('id')} 
-                  className="flex items-center gap-1 hover:text-rose-600 cursor-pointer"
-                >
-                  รหัสบุคคล {getSortIcon('id')}
-                </button>
+                ลำดับ
               </th>
               <th scope="col" className="px-3 py-3 text-left">
                 <button 
@@ -274,17 +269,18 @@ export const DataTable: React.FC<DataTableProps> = ({ records, onExportCsv }) =>
                 </td>
               </tr>
             ) : (
-              paginatedRecords.map((record) => {
+              paginatedRecords.map((record, index) => {
                 const riskStyles = getRiskStyles(record.riskLevel);
+                const rowNum = (currentPage - 1) * pageSize + index + 1;
                 return (
                   <tr 
                     key={record.id}
                     onClick={() => setSelectedPatient(record)}
                     className={`transition-colors cursor-pointer ${riskStyles.rowBorder}`}
                   >
-                    {/* ID */}
-                    <td className="px-3.5 py-3 font-semibold text-slate-900 font-['Plus_Jakarta_Sans'] whitespace-nowrap">
-                      {record.id}
+                    {/* Row Index */}
+                    <td className="px-3.5 py-3 font-semibold text-slate-500 font-['Plus_Jakarta_Sans'] whitespace-nowrap">
+                      #{rowNum}
                     </td>
 
                     {/* Date */}
